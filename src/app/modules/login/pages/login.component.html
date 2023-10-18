@@ -1,0 +1,25 @@
+<div class="container mt-5">
+  <h2>Login</h2>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="text" id="email" formControlName="email" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input type="password" id="password" formControlName="password" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-primary mt-3">Login</button>
+  </form>
+
+  <div class="mt-3">
+    <button class="btn btn-warning me-3" (click)="logAdmin()">
+      Acceso admin
+    </button>
+
+    <button class="btn btn-success" (click)="logEmpleado()">
+      Acceso empleado
+    </button>
+  </div>
+
+</div>

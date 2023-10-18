@@ -1,0 +1,113 @@
+<body class="bg-light">
+  <div class="container">
+    <main>
+      <div class="py-5 text-center">
+        <h2>Alta repartidor</h2>
+      </div>
+
+      <div class="row g-5">
+        <div class="col-md-5 col-lg-4 order-md-last">
+          <app-pais-repartidor (paisSeleccionado)="handlePaisSeleccionado($event)"></app-pais-repartidor>
+        </div>
+
+        <div class="col-md-7 col-lg-8">
+          <form [formGroup]="altaRepartidorForm" (ngSubmit)="onSubmit()" class="needs-validation" novalidate>
+            <div class="row g-3 justify-content-evenly">
+
+              <div class="col-sm-6">
+                <label for="nombre" class="form-label">Nombre</label>
+                <input
+                  type="text"
+                  formControlName="nombre"
+                  class="form-control"
+                  id="nombre"
+                />
+                <div *ngIf="altaRepartidorForm.get('nombre')?.hasError('required')" class="alert alert-danger mt-1 p-1 text-center">
+                  Nombre es requerido
+                </div>
+              </div>
+
+              <div class="col-sm-6">
+                <label for="dni" class="form-label">DNI</label>
+                <input
+                  type="text"
+                  formControlName="dni"
+                  class="form-control"
+                  id="dni"
+                />
+                <div *ngIf="altaRepartidorForm.get('dni')?.hasError('required')" class="alert alert-danger mt-1 p-1 text-center">
+                  DNI es requerido
+                </div>
+              </div>
+
+
+
+              <div class="col-12">
+                <label for="edad" class="form-label">Edad</label>
+                <div class="input-group has-validation">
+                  <input
+                    type="number"
+                    formControlName="edad"
+                    class="form-control"
+                    id="edad"
+                  />
+                </div>
+                <div *ngIf="altaRepartidorForm.get('edad')?.hasError('required')" class="alert alert-danger mt-1 p-1 text-center">
+                  Edad es requerido
+                </div>
+              </div>
+
+              <div class="col-12">
+                <label for="capacidadDeTransporte" class="form-label">Capacidad de transporte</label>
+                <input
+                  type="number"
+                  formControlName="capacidadDeTransporte"
+                  class="form-control"
+                  id="capacidadDeTransporte"
+                />
+                <div *ngIf="altaRepartidorForm.get('capacidadDeTransporte')?.hasError('required')" class="alert alert-danger mt-1 p-1 text-center">
+                  Capacidad de transporte es requerido
+                </div>
+              </div>
+
+              <div class="col-sm-6">
+                <label for="paisDeOrigen" class="form-label">Pais de origen</label>
+                <input
+                  readonly
+                  type="text"
+                  formControlName="paisDeOrigen"
+                  class="form-control"
+                  id="paisDeOrigen"
+                />
+                <div *ngIf="altaRepartidorForm.get('paisDeOrigen')?.hasError('required')" class="alert alert-danger mt-1 p-1 text-center">
+                  Pais de origen es requerido
+                </div>
+                <img *ngIf="paisSeleccionado.nombre != '' " [src]="paisSeleccionado.bandera" alt="{{ paisSeleccionado.nombre }} Flag" width="32" height="20">
+              </div>
+
+
+
+
+              <div class="col-sm-6">
+                <label for="unidadPropia" class="form-label">Unidad propia</label>
+                <input
+                  type="checkbox"
+                  formControlName="unidadPropia"
+                  id="unidadPropia"
+                />
+                <div *ngIf="altaRepartidorForm.get('unidadPropia')?.hasError('required')" class="alert alert-danger mt-1 p-1 text-center">
+                  Unidad propia es requerido
+                </div>
+              </div>
+
+            </div>
+
+            <button class="mt-3 w-100 btn btn-primary btn-lg" type="submit">
+              Crear
+            </button>
+          </form>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>

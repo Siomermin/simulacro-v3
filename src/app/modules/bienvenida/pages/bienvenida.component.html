@@ -1,0 +1,14 @@
+<div class="container text-center">
+  <h1>Bienvenida</h1>
+  <div *ngIf="user">
+    <img
+      src="{{ user.avatar_url }}"
+      alt="User Image"
+      width="100"
+      height="100"
+    />
+    <div *ngFor="let data of user | keyvalue">
+      <p>{{ data.key }}: {{ data.value }}</p>
+    </div>
+  </div>
+</div>

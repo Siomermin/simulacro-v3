@@ -97,8 +97,18 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "version": 2,
+            "browserTarget": "simulacro-v3:build:production"
+          }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "c660dd5e-f418-4154-bcc4-35d2cb40bf95"
   }
 }

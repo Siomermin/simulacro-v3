@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "parcial-labo-6d962": {
+      "hosting": {
+        "simulacro-v3": [
+          "parcial-labo-6d962"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "parcial-labo-6d962"
+  }
+}
