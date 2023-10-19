@@ -18,8 +18,8 @@ export class FirestoreService {
 
     try {
       const querySnapshot = await getDocs(col);
-      const repartidores = querySnapshot.docs.map(doc => doc.data());
-      return repartidores;
+      const data = querySnapshot.docs.map(doc => doc.data());
+      return data;
     } catch (error) {
       throw error;
     }

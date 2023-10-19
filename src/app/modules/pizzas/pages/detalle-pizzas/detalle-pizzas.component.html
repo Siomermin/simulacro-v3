@@ -1,0 +1,16 @@
+<div class="container py-3">
+  <div class="p-3 pb-md-4 mx-auto text-center">
+    <h1 class="display-4 fw-normal">Pizzas</h1>
+  </div>
+
+  <div>
+    <div class="row row-cols-1 row-cols-md-3 mb-3">
+      <app-alta-pizza (pizza)="alta($event)"></app-alta-pizza>
+      <app-modificar-pizza [item]="pizza" (confirmar)="modificar()"></app-modificar-pizza>
+      <app-borrar-pizza [item]="pizza" (confirmar)="borrar()"></app-borrar-pizza>
+    </div>
+
+    <h2 class="display-6 text-center mb-4">Pizzas listas</h2>
+    <app-lista-pizza [list]="list" (seleccionar)="seleccionar($event)"></app-lista-pizza>
+  </div>
+</div>

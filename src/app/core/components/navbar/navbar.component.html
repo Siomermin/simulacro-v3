@@ -27,6 +27,10 @@
           <a class="nav-link active" routerLink="repartidor/detalle">Detalle repartidor</a>
         </li>
 
+        <li *ngIf="loggedUser | async as user" class="nav-item">
+          <a class="nav-link active" routerLink="pizzas">Salen pizzas</a>
+        </li>
+
         <li  class="nav-item">
           <a
             *ngIf="loggedUser | async as user"
